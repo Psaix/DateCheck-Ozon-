@@ -28,10 +28,9 @@ for(int i = 0; i < amountOfdates; i++)
         //С помощью метода IsLeapYear проверяем, является ли введенный год вискосным или нет.
         //Если год является високосным, то макисмальное количество дней в феврале 29.
         //Если год не является високосным, то макисмальное количество дней в феврале 28.
-        //День не может быть меньше 1.
         if(DateTime.IsLeapYear(year))
         {
-            if(day > 29 || day < 1)
+            if(day > 29)
             {
                 answers[i] = "NO";
             }
@@ -42,7 +41,7 @@ for(int i = 0; i < amountOfdates; i++)
         }
         else
         {
-            if(day > 28|| day < 1)
+            if(day > 28)
             {
                 answers[i] = "NO";
             }
@@ -56,12 +55,11 @@ for(int i = 0; i < amountOfdates; i++)
     //Проверям остальные месяцы.
     //В месяцах 1, 3, 5, 7, 8, 10, 12 - не больше 31 дня.
     //В месяцах 4, 6, 9, 11 - не больше 30 дней.
-    //День не может быть меньше 1.
     else if(month != 2)
     {
         if(month % 2 != 0 && month < 9 || month == 8 || month == 10 || month == 12)
         {
-            if(day > 31 || day < 1)
+            if(day > 31)
             {
                 answers[i] = "NO";
             }
@@ -72,7 +70,7 @@ for(int i = 0; i < amountOfdates; i++)
         }
         else if (month % 2 == 0 && month < 8 || month == 9 || month == 11)
         {
-            if(day > 30 || day < 1)
+            if(day > 30)
             {
                 answers[i] = "NO";
             }
